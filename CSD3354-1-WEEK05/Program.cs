@@ -10,6 +10,7 @@ namespace CSD3354_1_WEEK05
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello World");
         }
     }
 }
