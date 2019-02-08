@@ -10,18 +10,20 @@ namespace CSD3354_1_WEEK05
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
+            Elevator e = new Elevator();
+            e.run();
         }
     }
+
     class Node
     {
         public Node() { }
-        Node floor;
-        Node elevatorUp;
-        string FloorNumber;
+        public Node floor;
+        public Node elevatorUp;
+        public string FloorNumber;
     }
 
-    class Evelator
+    class Elevator
     {
         Node FirstFloor;
         Node SecondFloor;
@@ -39,5 +41,4 @@ namespace CSD3354_1_WEEK05
             Console.WriteLine("floor number is {0} ", SecondFloor.FloorNumber);
         }
     }
-
 }
