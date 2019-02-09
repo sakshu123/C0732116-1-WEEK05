@@ -11,7 +11,8 @@ namespace CSD3354_1_WEEK05
         static void Main(string[] args)
         {
             Elevator e = new Elevator();
-            e.run();
+            e.setup();
+            e.TraverseList();
         }
     }
 
@@ -25,18 +26,19 @@ namespace CSD3354_1_WEEK05
 
     class Elevator
     {
+        Node Head;
         Node FirstFloor;
         Node SecondFloor;
         Node ThirdFloor;
         Node FourthFloor;
 
-        public void run()
+        public void setup()
         {
             FirstFloor = new Node();
             SecondFloor = new Node();
             ThirdFloor = new Node();
             FourthFloor = new Node();
-
+            Head = FirstFloor;
             FirstFloor.FloorNumber = "First Floor";
             FirstFloor.elevatorUp = SecondFloor;
             SecondFloor.FloorNumber = "Second Floor";
@@ -45,6 +47,23 @@ namespace CSD3354_1_WEEK05
             ThirdFloor.elevatorUp = FourthFloor;
             FourthFloor.FloorNumber = "Fourth Floor";
             FourthFloor.elevatorUp = null;
+        }
+
+        public void TraverseList()
+        {
+            Node temp;
+            temp = Head;
+
+            // where am I going to start?
+            Console.WriteLine("The first floor is " + Head.FloorNumber);
+            while (temp != null)
+            {
+                // NOW GET TO THE SECOND FLOOR!!!!
+                temp = temp.elevatorUp;
+                Console.WriteLine(temp.FloorNumber);
+
+            }
+
         }
     }
 }
